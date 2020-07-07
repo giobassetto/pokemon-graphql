@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AppBar from '../../components/AppBar';
 import { Card, CardContent, CardMedia, TextField, Typography, Button, Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -57,10 +57,7 @@ function Edit(props) {
 
     setOpenSnackbar(false);
   };
-  useEffect(() => {
-    console.log(pokemonInfos);
-    
-  }, [pokemonInfos, props])
+
   return (
     <>
       <AppBar history={props.history}/>
@@ -88,17 +85,16 @@ function Edit(props) {
               setPokemonInfos({...pokemonInfos, number: e.target.value });
             }}
             className={classes.inputRoot}
-            id="outlined-basic" 
             label="Número" 
             variant="outlined" 
           />
           <TextField 
-            value={pokemonInfos.name} 
+            value={pokemonInfos.name}
             onChange={(e) => {
               setPokemonInfos({...pokemonInfos, name: e.target.value });
             }}
             className={classes.inputRoot} 
-            id="outlined-basic" 
+            id="name-input"
             label="Nome" 
             variant="outlined" 
           />
@@ -108,7 +104,6 @@ function Edit(props) {
               setPokemonInfos({...pokemonInfos, maxHP: e.target.value });
             }}
             className={classes.inputRoot} 
-            id="outlined-basic" 
             label="HP" 
             variant="outlined" 
           />
@@ -124,8 +119,7 @@ function Edit(props) {
                 types[index] = e.target.value;
                 setPokemonInfos({...pokemonInfos, types });
               }}
-              className={classes.inputRoot} 
-              id="outlined-basic" 
+              className={classes.inputRoot}
               label={`Tipo - ${index + 1}`} 
               variant="outlined" 
             />
@@ -142,8 +136,7 @@ function Edit(props) {
                 resistant[index] = e.target.value;
                 setPokemonInfos({...pokemonInfos, resistant });
               }}
-              className={classes.inputRoot} 
-              id="outlined-basic" 
+              className={classes.inputRoot}
               label={`Resistência - ${index + 1}`} 
               variant="outlined" 
             />
@@ -162,8 +155,7 @@ function Edit(props) {
                     special: attacks
                   } });
                 }}
-                className={classes.inputRoot} 
-                id="outlined-basic" 
+                className={classes.inputRoot}
                 label="Nome do ataque" 
                 variant="outlined"
               />
@@ -176,8 +168,7 @@ function Edit(props) {
                     special: attacks
                   } });
                 }}
-                className={classes.inputRoot} 
-                id="outlined-basic" 
+                className={classes.inputRoot}
                 label="Tipo do ataque" 
                 variant="outlined"
               />
@@ -190,8 +181,7 @@ function Edit(props) {
                     special: attacks
                   } });
                 }}
-                className={classes.inputRoot} 
-                id="outlined-basic" 
+                className={classes.inputRoot}
                 label="Dano do ataque" 
                 variant="outlined"
               />
