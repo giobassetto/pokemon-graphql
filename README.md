@@ -16,6 +16,7 @@ Site desenvolvido em ReactJs. Consumindo a seguinte API GraphQL: https://github.
 * [Material UI](https://material-ui.com/)
 
 ##Informações para rodar o projeto
+
 ####Instalar dependências e executar
 ``yarn ou npm install``
 ``yarn start ou npm run start``
