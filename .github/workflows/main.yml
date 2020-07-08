@@ -2,8 +2,7 @@ name: Deploy Pokemons
 
 on:
   push:
-    branches: 
-      - master
+    branches: [master]
     
 env:
   BUCKET: pokemons.giovannibassetto.works
@@ -16,7 +15,7 @@ jobs:
         - uses: actions/checkout@v1
 
         - name: Setup Nodejs
-        - uses: actions/setup-node@v1
+          uses: actions/setup-node@v1
           with:
             node-version: 12.x
 
@@ -41,11 +40,5 @@ jobs:
 
         - name: Allow Files
           run: gsutil -m acl ch -R -u AllUsers:R gs://"$BUCKET"
-
-        - name: Set Cache Control Index.html
-          run: gsutil -m setmeta -h "Cache-Control:no-cache, no-store" gs://"$BUCKET"/index.html
-
-        - name: Set Cache Control Static Files
-          run: gsutil -m setmeta -h "Cache-Control:public, max-age=15768000" gs://"$BUCKET"/**/*.{png,svg,css,js}
         
   
