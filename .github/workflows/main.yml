@@ -42,10 +42,10 @@ jobs:
         - name: Allow Files
           run: gsutil -m acl ch -R -u AllUsers:R gs://"$BUCKET"
 
-        - name: Set Cache Control Static Files
-          run: gsutil -m setmeta -h "Cache-Control:public, max-age=15768000" gs://"$BUCKET"/**/*.{png,svg,css,js}
-
         - name: Set Cache Control Index.html
           run: gsutil -m setmeta -h "Cache-Control:no-cache, no-store" gs://"$BUCKET"/index.html
+
+        - name: Set Cache Control Static Files
+          run: gsutil -m setmeta -h "Cache-Control:public, max-age=15768000" gs://"$BUCKET"/**/*.{png,svg,css,js}
         
   

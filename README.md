@@ -2,6 +2,8 @@
 
 Site desenvolvido em ReactJs. Consumindo a seguinte API GraphQL: https://github.com/lucasbento/graphql-pokemon
 
+[Acessar Aplicação](https://pokemons.giovannibassetto.works);
+
 ![home](./images/home.png)
 -----
 ![details](./images/details.png)
