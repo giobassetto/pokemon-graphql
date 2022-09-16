@@ -31,7 +31,10 @@ function List(props) {
       }).then(response => {
         dispatch(getPokemonsListSuccess(response.data.pokemons));
         count = count + 10;
-      }).catch(error => dispatch(getPokemonsListError('Ocorreu um erro ao buscar os pokemons!')));
+      }).catch(error => {
+        console.log(error)
+        dispatch(getPokemonsListError('Ocorreu um erro ao buscar os pokemons!'))
+      });
     }
   });
 
